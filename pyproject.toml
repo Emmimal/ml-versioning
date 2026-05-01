@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "mlregistry"
+version = "0.1.0"
+description = "Lightweight file-system model registry"
+requires-python = ">=3.10"
+dependencies = [
+    "scikit-learn",
+    "joblib",
+    "numpy",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov"]
+mlflow = ["mlflow"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mlregistry*", "registry*"]
